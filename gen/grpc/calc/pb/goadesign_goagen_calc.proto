@@ -1,0 +1,29 @@
+// Code generated with goa v3.7.3, DO NOT EDIT.
+//
+// calc protocol buffer definition
+//
+// Command:
+// $ goa gen calc-kit/design
+
+syntax = "proto3";
+
+package calc;
+
+option go_package = "/calcpb";
+
+// The calc service performs calculations on numbers.
+service Calc {
+	// Multiply implements multiply.
+	rpc Multiply (MultiplyRequest) returns (MultiplyResponse);
+}
+
+message MultiplyRequest {
+	// multiplicand
+	sint32 a = 1;
+	// multiplier
+	sint32 b = 2;
+}
+
+message MultiplyResponse {
+	sint32 field = 1;
+}
